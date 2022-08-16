@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { GeoApiOptions, GeoApiUrl } from "./Api";
-import { FaAngleDown, FaCloud } from "react-icons/fa";
+import { FaAngleDown  } from "react-icons/fa";
 
 import f1 from "../../Image/f1.png";
 import f2 from "../../Image/f2.png";
 import f3 from "../../Image/f3.png";
-import Forecast from "../Forecast";
+import Forecast from "./Forecast";
 
 const Search = ({ onSearchChange, currentWeather, forecast }) => {
   const [search, setSearch] = useState(null);
@@ -57,13 +57,13 @@ const Search = ({ onSearchChange, currentWeather, forecast }) => {
       </div>
 
       <div>
-        <div className="text-2xl py-4">
+        <div className="text-4xl py-4">
           <span>Weather</span>
           <span className="font-bold"> Forecast</span>
         </div>
       </div>
 
-      <div>
+      <div className="font-semibold">
         <div className="flex justify-between items-end m-0">
           <div className="flex justify-center flex-col items-center m-2 ">
             <img src={f3} alt="berlin" className=" rounded-lg " />
@@ -82,16 +82,17 @@ const Search = ({ onSearchChange, currentWeather, forecast }) => {
         </div>
       </div>
 
-      <section>
-        <Forecast />
-        {/* {forecast && ( */}
-        <section>
-          <h1>Days</h1>
-
-
-        </section>
-        {/* )} */}
-      </section>
+      {!currentWeather ? (
+        <p className="italic text-sm  p-4 text-bluu border-x-2 border-bluu border-double">
+          Wherever you go, no matter what the weather, always bring your own
+          sunshine. Sunshine is delicious, rain is refreshing, wind braces us
+          up, snow is exhilarating; there is really no such thing as bad
+          weather, only different kinds of good weather
+        </p>
+      ) : (
+        <p> </p>
+      )}
+      {forecast && <Forecast forecast={forecast} />}
     </div>
   );
 };
