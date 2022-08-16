@@ -45,7 +45,7 @@ const Search = ({ onSearchChange, currentWeather, forecast }) => {
           value={search}
           onChange={handleOnChange}
           loadOptions={loadOptions}
-          className="w-1/2 border-2 border-bluu rounded-lg mr-5"
+          className="w-1/2 border-2 border-bluu rounded-lg mr-5 cursor"
         />
 
         <div className="flex justify-center items-center ">

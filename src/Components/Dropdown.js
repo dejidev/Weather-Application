@@ -26,9 +26,9 @@ const Dropdown = ({ data, certainDay, idx }) => {
         </div>
         <button onClick={() => setShow(!show)}>
           {!show ? (
-            <FaAngleDown className="w-8" />
+            <FaAngleDown className="w-8 cursor" />
           ) : (
-            <FaArrowUp className="w-8" />
+            <FaArrowUp className="w-8 cursor" />
           )}
         </button>
       </main>
